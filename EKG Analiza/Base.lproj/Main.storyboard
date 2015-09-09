@@ -84,14 +84,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="gOQ-N0-e1s">
-                                <rect key="frame" x="290" y="525" width="20" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="euK-bz-MDU"/>
-                                    <constraint firstAttribute="width" constant="20" id="opX-d3-O6c"/>
-                                </constraints>
-                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MfY-F7-R0A">
                                 <rect key="frame" x="200" y="520" width="200" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -114,15 +106,23 @@
                                     <constraint firstAttribute="width" constant="250" id="wn7-Rt-gUy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="gOQ-N0-e1s">
+                                <rect key="frame" x="282" y="516" width="37" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="euK-bz-MDU"/>
+                                    <constraint firstAttribute="width" constant="37" id="opX-d3-O6c"/>
+                                </constraints>
+                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="MfY-F7-R0A" secondAttribute="centerX" id="9kT-zm-yoC"/>
                             <constraint firstAttribute="centerX" secondItem="gOQ-N0-e1s" secondAttribute="centerX" id="HVy-Of-RbH"/>
-                            <constraint firstItem="WMl-Gb-hHu" firstAttribute="top" secondItem="gOQ-N0-e1s" secondAttribute="bottom" constant="55" id="bIa-vx-EK1"/>
+                            <constraint firstItem="WMl-Gb-hHu" firstAttribute="top" secondItem="gOQ-N0-e1s" secondAttribute="bottom" constant="47" id="bIa-vx-EK1"/>
                             <constraint firstItem="WMl-Gb-hHu" firstAttribute="top" secondItem="MfY-F7-R0A" secondAttribute="bottom" constant="50" id="qfW-tE-SpB"/>
                             <constraint firstItem="Iy6-ba-Rpk" firstAttribute="top" secondItem="RW5-9O-PIE" secondAttribute="bottom" constant="110" id="u2a-HI-eaX"/>
                             <constraint firstAttribute="centerX" secondItem="Iy6-ba-Rpk" secondAttribute="centerX" id="yfE-Ga-IVe"/>
@@ -133,11 +133,61 @@
                         <outlet property="actionButton" destination="MfY-F7-R0A" id="eJO-4H-eBN"/>
                         <outlet property="activityIndicator" destination="gOQ-N0-e1s" id="V1X-B3-tG9"/>
                         <outlet property="statusLabel" destination="Iy6-ba-Rpk" id="SgU-dm-fJR"/>
+                        <segue destination="I7o-fN-BPw" kind="show" identifier="showResults" id="LaZ-Ii-3E6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oFJ-VC-r86" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2223" y="330"/>
+        </scene>
+        <!--Results-->
+        <scene sceneID="OEx-8r-QK9">
+            <objects>
+                <viewController id="I7o-fN-BPw" customClass="GPResultsViewController" customModule="EKG_Analiza" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vvx-78-Jh6"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qup-3F-8XE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bMu-Wm-L0z">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EKG signal se obrađuje. Ovo može potrajati nekoliko minuta..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7b-om-T4T">
+                                <rect key="frame" x="150" y="225" width="300" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Qqi-zU-tRf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="UmN-Le-TC9">
+                                <rect key="frame" x="282" y="472" width="37" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="bHu-5z-Hhl"/>
+                                    <constraint firstAttribute="width" constant="37" id="tQI-ud-qaz"/>
+                                </constraints>
+                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Qup-3F-8XE" firstAttribute="top" secondItem="UmN-Le-TC9" secondAttribute="bottom" constant="91" id="0i5-Tj-4gi"/>
+                            <constraint firstAttribute="trailing" secondItem="U7b-om-T4T" secondAttribute="trailing" constant="150" id="CA6-Mq-Vyj"/>
+                            <constraint firstItem="U7b-om-T4T" firstAttribute="leading" secondItem="bMu-Wm-L0z" secondAttribute="leading" constant="150" id="aP2-qf-sDz"/>
+                            <constraint firstAttribute="centerX" secondItem="UmN-Le-TC9" secondAttribute="centerX" id="gBY-z7-zfW"/>
+                            <constraint firstItem="U7b-om-T4T" firstAttribute="top" secondItem="Vvx-78-Jh6" secondAttribute="bottom" constant="161" id="xmg-wj-T2x"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Results" id="BBF-9n-8i7"/>
+                    <connections>
+                        <outlet property="resultsActivityIndicator" destination="UmN-Le-TC9" id="Ub7-Hl-WNy"/>
+                        <outlet property="resultsTitleLabel" destination="U7b-om-T4T" id="xPc-YH-Ksx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CF2-YQ-Up4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2896" y="330"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tyR-qv-laH">

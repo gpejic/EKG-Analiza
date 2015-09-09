@@ -12,7 +12,6 @@ import UIKit
 enum Status {
     case NoSignal
     case HasSignal
-    case UploadedSignal
 }
 
 var signalStatus = Status.NoSignal
@@ -27,7 +26,6 @@ class GPHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
     }
     
     //MARK: - Helpers
@@ -36,23 +34,14 @@ class GPHomeViewController: UIViewController {
     }
     
     private func uploadSignal() {
-            addSignal()
+            performSegueWithIdentifier("showResults", sender: self)
     }
     
     func updateLabel() {
         startActivityIndicator(start: false)
-        switch signalStatus {
-        case .NoSignal:
-            statusLabel.text    = "Postoji EKG signal"
-            actionButton.setTitle("Upload Signala", forState: UIControlState.Normal)
-            signalStatus        = .HasSignal
-        case .HasSignal:
-            statusLabel.text    = "Uplodovan EKG signal"
-            actionButton.setTitle("Stop", forState: UIControlState.Normal)
-            signalStatus        = .UploadedSignal
-        default:
-            break
-        }
+        statusLabel.text    = "Postoji EKG signal"
+        actionButton.setTitle("Upload Signala", forState: UIControlState.Normal)
+        signalStatus        = .HasSignal
     }
     
     private func startActivityIndicator(#start: Bool) {
@@ -68,16 +57,14 @@ class GPHomeViewController: UIViewController {
     
     //MARK: - Actions
     @IBAction func actionButtonTap(sender: AnyObject) {
-        startActivityIndicator(start: true)
+        
         switch signalStatus {
         case .NoSignal:
-            statusLabel.text    = "Loading..."
+            startActivityIndicator(start: true)
+            statusLabel.text = "Loading..."
             addSignal()
         case .HasSignal:
-            statusLabel.text    = "Upload se izvrsava..."
             uploadSignal()
-        case .UploadedSignal:
-            break
         default:
             break
         }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C094DBC1BA036A2007CCE6C /* GPResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C094DBB1BA036A2007CCE6C /* GPResultsViewController.swift */; };
 		4CB1CABB1B9C5A4D0085E9DD /* GPHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB1CABA1B9C5A4D0085E9DD /* GPHomeViewController.swift */; };
 		4CB1CABE1B9CA6CF0085E9DD /* ansi_3a.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4CB1CABD1B9CA6CF0085E9DD /* ansi_3a.csv */; };
 		4CC23D711B97AD5800DF9CED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC23D701B97AD5800DF9CED /* AppDelegate.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C094DBB1BA036A2007CCE6C /* GPResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPResultsViewController.swift; sourceTree = "<group>"; };
 		4CB1CABA1B9C5A4D0085E9DD /* GPHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPHomeViewController.swift; sourceTree = "<group>"; };
 		4CB1CABD1B9CA6CF0085E9DD /* ansi_3a.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ansi_3a.csv; sourceTree = "<group>"; };
 		4CC23D6B1B97AD5800DF9CED /* EKG Analiza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EKG Analiza.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +99,7 @@
 				4CC23D791B97AD5800DF9CED /* LaunchScreen.xib */,
 				4CC23D6E1B97AD5800DF9CED /* Supporting Files */,
 				4CB1CABA1B9C5A4D0085E9DD /* GPHomeViewController.swift */,
+				4C094DBB1BA036A2007CCE6C /* GPResultsViewController.swift */,
 			);
 			path = "EKG Analiza";
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C094DBC1BA036A2007CCE6C /* GPResultsViewController.swift in Sources */,
 				4CB1CABB1B9C5A4D0085E9DD /* GPHomeViewController.swift in Sources */,
 				4CC23D731B97AD5800DF9CED /* ViewController.swift in Sources */,
 				4CC23D711B97AD5800DF9CED /* AppDelegate.swift in Sources */,
